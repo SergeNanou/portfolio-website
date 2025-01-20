@@ -13,6 +13,7 @@ from modelcluster.models import ClusterableModel
 from colorfield.fields import ColorField
 
 
+
 class HomePage(AbstractEmailForm):
     """_summary_
 

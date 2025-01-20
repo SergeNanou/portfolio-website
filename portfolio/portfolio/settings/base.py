@@ -22,6 +22,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY", get_random_secret_key())
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 ALLOWED_HOSTS = ["*"]
+
 DEFAULT_AUTO_FIELD='django.db.models.AutoField' 
 # Application definition
 
@@ -29,8 +30,10 @@ INSTALLED_APPS = [
     "home",
     "search",
     "site_settings",
-    "wagtail.contrib.forms",
     "wagtail.contrib.search_promotions",
+    "wagtail_localize",
+    "wagtail_localize.locales",  
+    "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
     "wagtail.contrib.settings",
     "wagtail.embeds",

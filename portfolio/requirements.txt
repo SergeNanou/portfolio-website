@@ -1,4 +1,5 @@
 Django==5.1.4
 wagtail==6.3.2
+wagtail_localize==1.11.1
 django-colorfield==0.11.0
 django-widget-tweaks==1.5.0

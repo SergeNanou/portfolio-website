@@ -1,11 +1,11 @@
 from django.db import models
 from wagtail.admin.panels import MultiFieldPanel, FieldPanel
-from wagtail.contrib.settings.models import BaseGenericSetting, register_setting
+from wagtail.contrib.settings.models import  BaseSiteSetting, register_setting
 from wagtail.fields import RichTextField
 
 
 @register_setting
-class SiteSettings(BaseGenericSetting):
+class SiteSettings(BaseSiteSetting):
     author_name = models.CharField(max_length=128)
     favicon = models.ForeignKey(
         "wagtailimages.Image", null=True, on_delete=models.SET_NULL, related_name="+"
@@ -20,7 +20,7 @@ class SiteSettings(BaseGenericSetting):
 
 
 @register_setting
-class SocialMediaSettings(BaseGenericSetting):
+class SocialMediaSettings(BaseSiteSetting):
     linkedin = models.URLField(blank=True, null=True)
     github = models.URLField(blank=True, null=True)
     instagram = models.URLField(blank=True, null=True)
