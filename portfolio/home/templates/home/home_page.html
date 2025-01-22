@@ -15,8 +15,8 @@
 <!-- Navbar -->
 <nav id="mainNav" class="navbar navbar-expand-lg  text-uppercase fixed-top" >
     <div class="container">
-        <a class="navbar-brand" href="#page-top"> {{ self.second_name }}
-            <span>{{ self.first_name }}</span></a>
+        <a class="navbar-brand" href="#page-top"> {% image page.site_logo original class="img-fluid" height="30px" width="30px"%}
+            <span>{{ self.text_logo }}</span></a>
         <button class="navbar-toggler text-uppercase font-weight-bold bg-primary rounded" type="button"
             data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive"
             aria-expanded="false" aria-label="Toggle navigation">
@@ -83,7 +83,7 @@
         <!-- About Content-->
         <div class="container">
             <div class="row">
-                <div class="col-md-8 col-lg-6 mx-auto about-text">
+                <div class="col-md-8 col-lg-6 mx-auto about-text text-center">
                     {{ page.about|richtext }}
                 </div>
             </div>

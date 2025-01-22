@@ -26,7 +26,15 @@ class HomePage(AbstractEmailForm):
 
     first_name = models.CharField(max_length=64, null=True)
     second_name = models.CharField(max_length=64, null=True)
+    text_logo = models.CharField(max_length=64, null=True)
     professional_title = models.CharField(max_length=140, blank=True, null=True)
+    site_logo = models.ForeignKey(
+        "wagtailimages.Image",
+        null=True,
+        on_delete=models.SET_NULL,
+        related_name="+",
+        help_text="Please, upload a sitelogo .",
+    )
     personal_photo = models.ForeignKey(
         "wagtailimages.Image",
         null=True,
@@ -42,6 +50,8 @@ class HomePage(AbstractEmailForm):
             [
                 FieldPanel("first_name"),
                 FieldPanel("second_name"),
+                FieldPanel("text_logo"),
+                FieldPanel("site_logo"),
                 FieldPanel("professional_title"),
                 FieldPanel("personal_photo"),
             ],
